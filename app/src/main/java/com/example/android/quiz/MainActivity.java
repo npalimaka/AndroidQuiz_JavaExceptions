@@ -1,39 +1,41 @@
 package com.example.android.quiz;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static android.graphics.Color.RED;
+
 public class MainActivity extends AppCompatActivity {
 
-    //right answer for first question
+    private int score;
+    //right answers for all questions
     @BindView(R.id.first_answerB)
     RadioButton first_answerB;
-    //for question two
     @BindView(R.id.second_answerA)
     CheckBox second_answerA;
     @BindView(R.id.second_answerB)
     CheckBox second_answerB;
     @BindView(R.id.second_answerC)
     CheckBox second_answerC;
-    //for question three
     @BindView(R.id.third_answer)
     EditText third_answer;
-    //question four
     @BindView(R.id.fourth_answerA)
     CheckBox fourth_answerA;
     @BindView(R.id.fourth_answerB)
     CheckBox fourth_answerB;
-    //question five
     @BindView(R.id.fifth_answerA)
     RadioButton fifth_answerA;
     @BindView(R.id.sixth_answer)
@@ -53,15 +55,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         ButterKnife.bind(this);
     }
 
     public int countScore() {
-        int score = 0;
-        if(first_answerB.isChecked()){
-            score += 1;
-        }
+        score = 0;
+        correctRadioButtonAnswerCheck(first_answerB);
         if(second_answerA.isChecked() && second_answerB.isChecked() && second_answerC.isChecked()){
             score += 1;
         }
@@ -71,27 +70,28 @@ public class MainActivity extends AppCompatActivity {
         if(fourth_answerA.isChecked() && fourth_answerB.isChecked()){
             score += 1;
         }
-        if(fifth_answerA.isChecked()){
-            score += 1;
-        }
+        correctRadioButtonAnswerCheck(fifth_answerA);
         if(sixth_answer.getText().toString().equals("throw")){
             score += 1;
         }
         if(seventh_answerA.isChecked() && seventh_answerD.isChecked()){
             score += 1;
         }
-        if(eighth_answerD.isChecked()){
-            score += 1;
-        }
-        if(ninth_answerA.isChecked()){
-            score += 1;
-        }
-        if(tenth_answerC.isChecked()){
-            score += 1;
-        }
-        return score;
+        correctRadioButtonAnswerCheck(eighth_answerD);
+        correctRadioButtonAnswerCheck(ninth_answerA);
+        correctRadioButtonAnswerCheck(tenth_answerC);
 
+        return score;
     }
+
+    private void correctRadioButtonAnswerCheck(RadioButton radioButton) {
+
+        if(radioButton.isChecked()){
+            score += 1;
+            radioButton.setTextColor(Color.GREEN);
+        }
+    }
+
     @OnClick(R.id.submit_button)
     public void submit(){
         Toast.makeText(this, "Your score: " + countScore() + "/10", Toast.LENGTH_SHORT).show();
