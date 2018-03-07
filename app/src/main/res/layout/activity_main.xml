@@ -58,6 +58,7 @@
             android:text="@string/second_c" />
 
         <CheckBox
+            android:id="@+id/second_answerD"
             style="@style/SecondAnswerField"
             android:paddingBottom="6dp"
             android:text="@string/second_d" />
@@ -101,10 +102,12 @@
             android:text="@string/fourth_b" />
 
         <CheckBox
+            android:id="@+id/fourth_answerC"
             style="@style/FirstAnswerField"
             android:text="@string/fourth_c" />
 
         <CheckBox
+            android:id="@+id/fourth_answerD"
             style="@style/SecondAnswerField"
             android:paddingBottom="6dp"
             android:text="@string/fourth_d" />
@@ -172,10 +175,12 @@
             android:text="@string/seventh_a" />
 
         <CheckBox
+            android:id="@+id/seventh_answerB"
             style="@style/SecondAnswerField"
             android:text="@string/seventh_b" />
 
         <CheckBox
+            android:id="@+id/seventh_answerC"
             style="@style/FirstAnswerField"
             android:text="@string/seventh_c" />
 

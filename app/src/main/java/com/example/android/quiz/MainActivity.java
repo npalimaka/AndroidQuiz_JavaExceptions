@@ -24,18 +24,28 @@ public class MainActivity extends AppCompatActivity {
     CheckBox second_answerB;
     @BindView(R.id.second_answerC)
     CheckBox second_answerC;
+    @BindView(R.id.second_answerD)
+    CheckBox second_answerD;
     @BindView(R.id.third_answer)
     EditText third_answer;
     @BindView(R.id.fourth_answerA)
     CheckBox fourth_answerA;
     @BindView(R.id.fourth_answerB)
     CheckBox fourth_answerB;
+    @BindView(R.id.fourth_answerC)
+    CheckBox fourth_answerC;
+    @BindView(R.id.fourth_answerD)
+    CheckBox fourth_answerD;
     @BindView(R.id.fifth_answerA)
     RadioButton fifth_answerA;
     @BindView(R.id.sixth_answer)
     EditText sixth_answer;
     @BindView(R.id.seventh_answerA)
     CheckBox seventh_answerA;
+    @BindView(R.id.seventh_answerB)
+    CheckBox seventh_answerB;
+    @BindView(R.id.seventh_answerC)
+    CheckBox seventh_answerC;
     @BindView(R.id.seventh_answerD)
     CheckBox seventh_answerD;
     @BindView(R.id.eighth_answerD)
@@ -57,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private int countScore() {
         score = 0;
         correctRadioButtonAnswerCheck(first_answerB);
-        if (second_answerA.isChecked() && second_answerB.isChecked() && second_answerC.isChecked()) {
+        if (second_answerA.isChecked() && second_answerB.isChecked() && second_answerC.isChecked() && !second_answerD.isChecked()) {
             score += 1;
             if (second_answerA.isChecked()) {
                 second_answerA.setTextColor(Color.GREEN);
@@ -69,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 second_answerC.setTextColor(Color.GREEN);
             }
         }
-        if (third_answer.getText().toString().equals("throws")) {
+        if (third_answer.getText().toString().equalsIgnoreCase("throws")) {
             score += 1;
             third_answer.setTextColor(Color.GREEN);
         } else {
             third_answer.setTextColor(Color.RED);
         }
-        if (fourth_answerA.isChecked() && fourth_answerB.isChecked()) {
+        if (fourth_answerA.isChecked() && fourth_answerB.isChecked() && !fourth_answerC.isChecked() && !fourth_answerD.isChecked()) {
             score += 1;
             if (fourth_answerA.isChecked()) {
                 fourth_answerA.setTextColor(Color.GREEN);
@@ -85,13 +95,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         correctRadioButtonAnswerCheck(fifth_answerA);
-        if (sixth_answer.getText().toString().equals("throw")) {
+        if (sixth_answer.getText().toString().equalsIgnoreCase("throw")) {
             score += 1;
             sixth_answer.setTextColor(Color.GREEN);
         } else {
             sixth_answer.setTextColor(Color.RED);
         }
-        if (seventh_answerA.isChecked() && seventh_answerD.isChecked()) {
+        if (seventh_answerA.isChecked() && !seventh_answerB.isChecked() && !seventh_answerC.isChecked() && seventh_answerD.isChecked()) {
             score += 1;
             if (seventh_answerA.isChecked()) {
                 seventh_answerA.setTextColor(Color.GREEN);
