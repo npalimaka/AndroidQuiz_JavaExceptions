@@ -4,51 +4,37 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/MatchAndWrapStyle"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center_horizontal"
-            android:text="@string/java_exceptions"
-            android:textAllCaps="true"
-            android:textColor="#00796B"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            style="@style/TitleStyle"
+            android:text="@string/java_exceptions" />
 
         <TextView
             style="@style/QuestionHeaders"
             android:text="@string/first_question" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RadioGroup style="@style/RadioGroupStyle">
 
             <RadioButton
-                android:id="@+id/first_answerA"
-                android:text="@string/first_a"
-                style="@style/FirstAnswerField" />
+                style="@style/FirstAnswerField"
+                android:text="@string/first_a" />
 
             <RadioButton
                 android:id="@+id/first_answerB"
-                android:text="@string/first_b"
-                style="@style/SecondAnswerField" />
+                style="@style/SecondAnswerField"
+                android:text="@string/first_b" />
 
             <RadioButton
-                android:id="@+id/first_answerC"
                 style="@style/FirstAnswerField"
                 android:text="@string/first_c" />
 
             <RadioButton
-                android:id="@+id/first_answerD"
-                android:paddingBottom="6dp"
                 style="@style/SecondAnswerField"
+                android:paddingBottom="6dp"
                 android:text="@string/first_d" />
         </RadioGroup>
 
@@ -72,7 +58,6 @@
             android:text="@string/second_c" />
 
         <CheckBox
-            android:id="@+id/second_answerD"
             style="@style/SecondAnswerField"
             android:paddingBottom="6dp"
             android:text="@string/second_d" />
@@ -82,30 +67,23 @@
             android:text="@string/third_question" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/MatchAndWrapStyle"
             android:orientation="horizontal"
             android:paddingLeft="6dp"
             android:paddingRight="6dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/third_prefix"
-                android:textColor="#000000" />
+                style="@style/CodeSampleStyle"
+                android:text="@string/third_prefix" />
 
             <EditText
                 android:id="@+id/third_answer"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:inputType="text" />
+                style="@style/EditTextStyle"
+                android:imeOptions="actionDone" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/third_postfix"
-                android:textColor="#000000" />
+                style="@style/CodeSampleStyle"
+                android:text="@string/third_postfix" />
         </LinearLayout>
 
         <TextView
@@ -123,25 +101,19 @@
             android:text="@string/fourth_b" />
 
         <CheckBox
-            android:id="@+id/fourth_answerC"
             style="@style/FirstAnswerField"
             android:text="@string/fourth_c" />
 
         <CheckBox
-            android:id="@+id/fourth_answerD"
             style="@style/SecondAnswerField"
             android:paddingBottom="6dp"
             android:text="@string/fourth_d" />
-
 
         <TextView
             style="@style/QuestionHeaders"
             android:text="@string/fifth_question" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RadioGroup style="@style/RadioGroupStyle">
 
             <RadioButton
                 android:id="@+id/fifth_answerA"
@@ -149,17 +121,14 @@
                 android:text="@string/fifth_a" />
 
             <RadioButton
-                android:id="@+id/fifth_answerB"
                 style="@style/SecondAnswerField"
                 android:text="@string/fifth_b" />
 
             <RadioButton
-                android:id="@+id/fifth_answerC"
                 style="@style/FirstAnswerField"
                 android:text="@string/fifth_c" />
 
             <RadioButton
-                android:id="@+id/fifth_answerD"
                 style="@style/SecondAnswerField"
                 android:paddingBottom="6dp"
                 android:text="@string/fifth_d" />
@@ -170,33 +139,27 @@
             android:text="@string/sixth_question" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/MatchAndWrapStyle"
             android:padding="6dp">
 
             <TextView
                 android:id="@+id/sixth_prefix"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MatchAndWrapStyle"
                 android:text="@string/sixth_prefix"
                 android:textColor="#000000" />
 
             <EditText
                 android:id="@+id/sixth_answer"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                style="@style/EditTextStyle"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@id/sixth_prefix"
-                android:inputType="text" />
+                android:layout_below="@id/sixth_prefix" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CodeSampleStyle"
                 android:layout_below="@id/sixth_prefix"
                 android:layout_toRightOf="@id/sixth_answer"
                 android:paddingTop="20dp"
-                android:text="@string/sixth_postfix"
-                android:textColor="#000000" />
+                android:text="@string/sixth_postfix" />
         </RelativeLayout>
 
         <TextView
@@ -209,12 +172,10 @@
             android:text="@string/seventh_a" />
 
         <CheckBox
-            android:id="@+id/seventh_answerB"
             style="@style/SecondAnswerField"
             android:text="@string/seventh_b" />
 
         <CheckBox
-            android:id="@+id/seventh_answerC"
             style="@style/FirstAnswerField"
             android:text="@string/seventh_c" />
 
@@ -228,23 +189,17 @@
             style="@style/QuestionHeaders"
             android:text="@string/eighth_question" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RadioGroup style="@style/RadioGroupStyle">
 
             <RadioButton
-                android:id="@+id/eighth_answerA"
                 style="@style/FirstAnswerField"
                 android:text="@string/eighth_a" />
 
             <RadioButton
-                android:id="@+id/eighth_answerB"
                 style="@style/SecondAnswerField"
                 android:text="@string/eighth_b" />
 
             <RadioButton
-                android:id="@+id/eighth_answerC"
                 style="@style/FirstAnswerField"
                 android:text="@string/eighth_c" />
 
@@ -260,17 +215,13 @@
             android:text="@string/ninth_question" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/MatchAndWrapStyle"
             android:layout_margin="6dp"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
             android:text="@string/ninth_codeSample" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RadioGroup style="@style/RadioGroupStyle">
 
             <RadioButton
                 android:id="@+id/ninth_answerA"
@@ -278,17 +229,14 @@
                 android:text="@string/ninth_a" />
 
             <RadioButton
-                android:id="@+id/ninth_answerB"
                 style="@style/SecondAnswerField"
                 android:text="@string/ninth_b" />
 
             <RadioButton
-                android:id="@+id/ninth_answerC"
                 style="@style/FirstAnswerField"
                 android:text="@string/ninth_c" />
 
             <RadioButton
-                android:id="@+id/ninth_answerD"
                 style="@style/SecondAnswerField"
                 android:paddingBottom="6dp"
                 android:text="@string/ninth_d" />
@@ -298,18 +246,13 @@
             style="@style/QuestionHeaders"
             android:text="@string/tenth_question" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RadioGroup style="@style/RadioGroupStyle">
 
             <RadioButton
-                android:id="@+id/tenth_answerA"
                 style="@style/FirstAnswerField"
                 android:text="@string/tenth_a" />
 
             <RadioButton
-                android:id="@+id/tenth_answerB"
                 style="@style/SecondAnswerField"
                 android:text="@string/tenth_b" />
 
@@ -319,25 +262,19 @@
                 android:text="@string/tenth_c" />
 
             <RadioButton
-                android:id="@+id/tenth_answerD"
                 style="@style/SecondAnswerField"
                 android:paddingBottom="6dp"
                 android:text="@string/tenth_d" />
         </RadioGroup>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <RelativeLayout
+            style="@style/MatchAndWrapStyle"
             android:background="#009688">
 
             <Button
                 android:id="@+id/submit_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/submit"
-                android:textColor="#00796B" />
-        </LinearLayout>
-
+                style="@style/SubmitButtonStyle"
+                android:text="@string/submit" />
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
